@@ -1,0 +1,16 @@
+server:
+  port: 3344
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/gongxindezile/springcloud-config.git #GitHub上面的git仓库名字
+#远端库 springcloud-config项目, 只有一个application.yml文件(其他微服务的yml配置信息都写在这里, 通过---连在一起)
+#通过config-server微服务测试是否可以从GitHub上获取其他微服务的application.yml的配置内容
+#http://localhost:3344/application-dev.yml
+#http://localhost:3344/application-test.yml
+#
